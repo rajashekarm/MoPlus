@@ -2,3 +2,4 @@ fastapi
 uvicorn
 pyjwt
 google-auth
+requests
