@@ -59,6 +59,11 @@ async def login(form_data: str):
 
 
 
+@app.get("/login")
+async def login():
+    return HTMLResponse(content=open("MobilityPlus/app/templates/login.html").read(), status_code=200)
+
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
