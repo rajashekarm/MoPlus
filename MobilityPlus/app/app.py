@@ -1,10 +1,16 @@
 import os
-from fastapi import Depends, HTTPException, status, FastAPI, WebSocket, Response
+from fastapi import FastAPI, HTTPException, status, WebSocket, Response
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 import jwt
 from google.auth.transport import requests
 from google.oauth2 import id_token
+
 # FastAPI app instance
 app = FastAPI()
+
+# Mount static files
+app.mount("/", StaticFiles(directory="MobilityPlus/app/static"), name="static")
 
 # Secrets should be stored securely, not hardcoded
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
