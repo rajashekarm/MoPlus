@@ -1,18 +1,8 @@
 import os
+from fastapi import Depends, HTTPException, status, FastAPI, WebSocket, Response
 import jwt
-from fastapi import status
-from fastapi import FastAPI, WebSocket, Response
-
-# FastAPI app instance
-app = FastAPI()
-
-# Secrets should be stored securely, not hardcoded
-CLIENT_SECRET = os.getenv('CLIENT_SECRET')
-
-from fastapi import FastAPI, HTTPException
-from google.oauth2 import id_token
 from google.auth.transport import requests
-
+from google.oauth2 import id_token
 # FastAPI app instance
 app = FastAPI()
 
