@@ -9,6 +9,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var manager = nipplejs.create(options);
 
+  // Add event listeners for the new buttons
+  document.getElementById('forward').addEventListener('click', function () {
+    socket.emit('message', 'Move forward');
+  });
+
+  document.getElementById('backward').addEventListener('click', function () {
+    socket.emit('message', 'Move backward');
+  });
+
+  document.getElementById('left').addEventListener('click', function () {
+    socket.emit('message', 'Turn left');
+  });
+
+  document.getElementById('right').addEventListener('click', function () {
+    socket.emit('message', 'Turn right');
+  });
   manager.on('move', function (evt, data) {
     // Send joystick data (direction and force) to server via socket.io
     socket.emit('joystick', { direction: data.direction.angle, force: data.force });
