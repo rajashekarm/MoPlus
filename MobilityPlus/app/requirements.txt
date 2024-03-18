@@ -1,4 +1,4 @@
 fastapi
 uvicorn
-python-jwt
+pyjwt
 google-auth
