@@ -1,22 +1,7 @@
 import os
-# import sqlite3
-# import subprocess
-# from datetime import datetime, timedelta
-# from typing import Optional
-# from urllib.request import Request
-#
-# from google.oauth2 import id_token
-# from google.auth.transport import requests
 import jwt
-from fastapi import Depends, HTTPException, status
+from fastapi import status
 from fastapi import FastAPI, WebSocket, Response
-# from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
-# from fastapi.responses import RedirectResponse
-# from fastapi.security import OAuth2
-# from fastapi.security import SecurityScopes
-# from fastapi.security.utils import get_authorization_scheme_param
-# from passlib.context import CryptContext
-# from pydantic import BaseModel
 
 # FastAPI app instance
 app = FastAPI()
@@ -25,7 +10,6 @@ app = FastAPI()
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
 from fastapi import FastAPI, HTTPException
-# from fastapi.responses import RedirectResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
