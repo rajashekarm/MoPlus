@@ -12,6 +12,9 @@ app = FastAPI()
 # Mount static files
 static_files_directory = os.path.abspath('MobilityPlus/app/static')
 
+app.mount("/", StaticFiles(directory=static_files_directory), name="static")
+
+
 # Secrets should be stored securely, not hardcoded
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
