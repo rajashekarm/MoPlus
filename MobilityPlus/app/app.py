@@ -54,7 +54,7 @@ async def login(form_data: str):
             raise HTTPException(401, "Invalid user")
 
         response = Response(content='Logged in', status_code=303)
-        response.headers["Location"] = "http://localhost:63342/MobilityPlus/app/templates/integrate.html"
+        response.headers["Location"] = "MobilityPlus/app/templates/integrate.html"
         return response
 
 
