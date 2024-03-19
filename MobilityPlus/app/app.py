@@ -96,8 +96,6 @@ async def websocket_endpoint(websocket: WebSocket):
         data = await websocket.receive_text()
         print(f"Received message: {data}")
 
-        # Rest of your code...
-
 @app.exception_handler(HTTPException)
 async def auth_exception_handler(request, exc):
     if exc.status_code == 401:
