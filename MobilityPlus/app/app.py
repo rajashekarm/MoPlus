@@ -68,6 +68,21 @@ async def login():
 async def control():
     return HTMLResponse(content=open("MobilityPlus/app/templates/integrate.html").read(), status_code=200)
 
+@app.get("/loginCss")
+async def logincss():
+    return HTMLResponse(content=open("MobilityPlus/app/static/login.css").read(), status_code=200)
+
+@app.get("/loginJS")
+async def loginJS():
+    return HTMLResponse(content=open("MobilityPlus/app/static/login.js").read(), status_code=200)
+
+@app.get("/controlCSS")
+async def controlCSS():
+    return HTMLResponse(content=open("MobilityPlus/app/static/integrate.css").read(), status_code=200)
+
+@app.get("/controlJS")
+async def controlJS():
+    return HTMLResponse(content=open("MobilityPlus/app/static/integrate.js").read(), status_code=200)
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
