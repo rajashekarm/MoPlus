@@ -10,7 +10,7 @@ from google.oauth2 import id_token
 app = FastAPI()
 
 # Mount static files
-app.mount("/", StaticFiles(directory="MobilityPlus/app/static"), name="static")
+static_files_directory = os.path.abspath('MobilityPlus/app/static')
 
 # Secrets should be stored securely, not hardcoded
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
